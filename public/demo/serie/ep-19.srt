@@ -1,0 +1,24 @@
+1
+00:00:00,000 --> 00:00:02,500
+pldbr.tech — EP 19: O RIF é assinado
+
+2
+00:00:02,500 --> 00:00:16,500
+Suspeita confirmada: nasce o RIF ao COAF
+
+3
+00:00:16,500 --> 00:00:29,500
+Prazo: 24 horas úteis
+
+4
+00:00:29,500 --> 00:00:44,500
+Assinatura digital com validade de cartório
+
+5
+00:00:44,500 --> 00:00:57,500
+Guarda imutável por 10 anos — nem o sistema altera
+
+6
+00:00:57,500 --> 00:01:00,500
+Ambiente de demonstração — dados fictícios · pldbr.tech
+

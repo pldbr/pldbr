@@ -1,0 +1,24 @@
+1
+00:00:00,000 --> 00:00:02,500
+pldbr.tech — EP 02: O sistema em um relance
+
+2
+00:00:02,500 --> 00:00:16,500
+Centro de comando: o motor em produção
+
+3
+00:00:16,500 --> 00:00:30,500
+10 milhões de movimentações/mês examinadas
+
+4
+00:00:30,500 --> 00:00:45,500
+Recall 0,94: de cada 100 casos reais, 94 apanhados
+
+5
+00:00:45,500 --> 00:00:57,500
+Resposta em segundos — sem fila, sem espera
+
+6
+00:00:57,500 --> 00:01:00,500
+Ambiente de demonstração — dados fictícios · pldbr.tech
+

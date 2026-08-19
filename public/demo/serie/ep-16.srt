@@ -1,0 +1,24 @@
+1
+00:00:00,000 --> 00:00:02,500
+pldbr.tech — EP 16: A IA propõe, o humano decide
+
+2
+00:00:02,500 --> 00:00:15,500
+O assistente: IA lê o alerta e propõe a minuta
+
+3
+00:00:15,500 --> 00:00:26,500
+Modelo: qwen3.7-flash (Qwen)
+
+4
+00:00:26,500 --> 00:00:44,500
+Analisando em tempo real…
+
+5
+00:00:44,500 --> 00:00:56,500
+A IA propõe — quem decide é o analista humano
+
+6
+00:00:56,500 --> 00:00:59,500
+Ambiente de demonstração — dados fictícios · pldbr.tech
+

@@ -1,0 +1,24 @@
+1
+00:00:00,000 --> 00:00:02,500
+pldbr.tech — EP 04: O motor levanta a suspeita
+
+2
+00:00:02,500 --> 00:00:16,500
+A fila de alertas: a mão levantada do motor
+
+3
+00:00:16,500 --> 00:00:32,500
+Score 0–100: probabilidade — indício, não prova
+
+4
+00:00:32,500 --> 00:00:47,500
+Vermelho: ação hoje · amarelo: 24 horas
+
+5
+00:00:47,500 --> 00:00:57,500
+O mais grave está sempre no topo
+
+6
+00:00:57,500 --> 00:01:00,500
+Ambiente de demonstração — dados fictícios · pldbr.tech
+

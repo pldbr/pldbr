@@ -1,0 +1,24 @@
+1
+00:00:00,000 --> 00:00:02,500
+pldbr.tech — EP 10: Consultando as listas
+
+2
+00:00:02,500 --> 00:00:16,500
+Listas restritivas: OFAC, ONU, UE, CEAF
+
+3
+00:00:16,500 --> 00:00:32,500
+Ivan Demo Petrov: match 96% com OFAC SDN
+
+4
+00:00:32,500 --> 00:00:47,500
+Acima de 85%: bloqueio preventivo + COAF
+
+5
+00:00:47,500 --> 00:00:57,500
+A mesma checagem dos bancos — em milissegundos
+
+6
+00:00:57,500 --> 00:01:00,500
+Ambiente de demonstração — dados fictícios · pldbr.tech
+

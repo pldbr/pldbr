@@ -1,0 +1,24 @@
+1
+00:00:00,000 --> 00:00:02,500
+pldbr.tech — EP 05: Lendo um alerta
+
+2
+00:00:02,500 --> 00:00:16,500
+O caso da série: ALT-2026-4100
+
+3
+00:00:16,500 --> 00:00:32,500
+Comércio Fictício Alfa · fracionamento (TIP-001)
+
+4
+00:00:32,500 --> 00:00:47,500
+Valor: quase R$ 2 milhões · 3 entidades
+
+5
+00:00:47,500 --> 00:00:58,500
+Camada: quem detectou — regra, modelo ou desvio
+
+6
+00:00:58,500 --> 00:01:01,500
+Ambiente de demonstração — dados fictícios · pldbr.tech
+

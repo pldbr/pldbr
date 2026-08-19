@@ -1,0 +1,24 @@
+1
+00:00:00,000 --> 00:00:02,500
+pldbr.tech — EP 13: Um investigado, muitas carteiras
+
+2
+00:00:02,500 --> 00:00:17,500
+Cluster: carteiras de um mesmo controlador
+
+3
+00:00:17,500 --> 00:00:33,500
+CL-88: 27 endereços, descobertos por heurísticas
+
+4
+00:00:33,500 --> 00:00:47,500
+Público e verificável — não palpite
+
+5
+00:00:47,500 --> 00:00:56,500
+Não são 27 suspeitos: é um
+
+6
+00:00:56,500 --> 00:00:59,500
+Ambiente de demonstração — dados fictícios · pldbr.tech
+

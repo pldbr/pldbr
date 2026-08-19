@@ -1,0 +1,24 @@
+1
+00:00:00,000 --> 00:00:02,500
+pldbr.tech — EP 11: A trilha cripto começa
+
+2
+00:00:02,500 --> 00:00:16,500
+Parte do dinheiro foi para cripto
+
+3
+00:00:16,500 --> 00:00:32,500
+Origem → mixer → reaparece numa exchange
+
+4
+00:00:32,500 --> 00:00:47,500
+Mixer: embaralha fundos para esconder a origem
+
+5
+00:00:47,500 --> 00:00:57,500
+O rastro não acabou: virou nome
+
+6
+00:00:57,500 --> 00:01:00,500
+Ambiente de demonstração — dados fictícios · pldbr.tech
+

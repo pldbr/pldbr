@@ -1,0 +1,24 @@
+1
+00:00:00,000 --> 00:00:02,500
+pldbr.tech — EP 07: A trilha de um fracionador
+
+2
+00:00:02,500 --> 00:00:17,500
+Outra tipologia: crypto mixing
+
+3
+00:00:17,500 --> 00:00:32,500
+Persegue até 6 saltos, confiança > 62%
+
+4
+00:00:32,500 --> 00:00:47,500
+8 serviços de ocultação sob vigilância
+
+5
+00:00:47,500 --> 00:00:57,500
+Vínculo confiável: o motor levanta a mão
+
+6
+00:00:57,500 --> 00:01:00,500
+Ambiente de demonstração — dados fictícios · pldbr.tech
+

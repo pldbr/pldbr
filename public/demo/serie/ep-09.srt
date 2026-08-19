@@ -1,0 +1,24 @@
+1
+00:00:00,000 --> 00:00:02,500
+pldbr.tech — EP 09: A rede de sócios
+
+2
+00:00:02,500 --> 00:00:17,500
+Ninguém lava sozinho: o KYB mapeia a rede
+
+3
+00:00:17,500 --> 00:00:32,500
+6 empresas vinculadas · 3 jurisdições
+
+4
+00:00:32,500 --> 00:00:48,500
+Sócio comum com empresas já citadas noutro caso
+
+5
+00:00:48,500 --> 00:00:57,500
+É assim que ilhas viram continente
+
+6
+00:00:57,500 --> 00:01:00,500
+Ambiente de demonstração — dados fictícios · pldbr.tech
+

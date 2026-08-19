@@ -1,0 +1,24 @@
+1
+00:00:00,000 --> 00:00:02,500
+pldbr.tech — EP 08: Quem é o cliente
+
+2
+00:00:02,500 --> 00:00:16,500
+Antes do dinheiro, o rosto: KYC
+
+3
+00:00:16,500 --> 00:00:30,500
+Score 82 — risco alto
+
+4
+00:00:30,500 --> 00:00:46,500
+Sócio PEP: cargo público exige atenção redobrada
+
+5
+00:00:46,500 --> 00:00:56,500
+Documentos validados automaticamente
+
+6
+00:00:56,500 --> 00:00:59,500
+Ambiente de demonstração — dados fictícios · pldbr.tech
+

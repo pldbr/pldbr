@@ -1,0 +1,24 @@
+1
+00:00:00,000 --> 00:00:02,500
+pldbr.tech — EP 01: O que é lavagem de dinheiro
+
+2
+00:00:02,500 --> 00:00:20,500
+Lavagem: colocar, ocultar, integrar
+
+3
+00:00:20,500 --> 00:00:36,500
+O motor enxerga o ciclo onde ele tenta ser invisível
+
+4
+00:00:36,500 --> 00:00:52,500
+Nesta série: uma investigação inteira, passo a passo
+
+5
+00:00:52,500 --> 00:01:00,500
+Um minuto por episódio
+
+6
+00:01:00,500 --> 00:01:03,500
+Ambiente de demonstração — dados fictícios · pldbr.tech
+

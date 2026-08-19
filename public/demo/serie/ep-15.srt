@@ -1,0 +1,24 @@
+1
+00:00:00,000 --> 00:00:02,500
+pldbr.tech — EP 15: O caso se abre
+
+2
+00:00:02,500 --> 00:00:16,500
+Alerta confirmado vira caso
+
+3
+00:00:16,500 --> 00:00:31,500
+CAS-2026-0112: o caso do mixer
+
+4
+00:00:31,500 --> 00:00:46,500
+Linha do tempo: tudo datado, tudo assinado
+
+5
+00:00:46,500 --> 00:00:56,500
+Relatório sem trilha é opinião
+
+6
+00:00:56,500 --> 00:00:59,500
+Ambiente de demonstração — dados fictícios · pldbr.tech
+

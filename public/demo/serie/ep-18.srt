@@ -1,0 +1,24 @@
+1
+00:00:00,000 --> 00:00:02,500
+pldbr.tech — EP 18: Bloqueio preventivo
+
+2
+00:00:02,500 --> 00:00:16,500
+Valor perigoso: retido em milissegundos
+
+3
+00:00:16,500 --> 00:00:31,500
+Sempre citando a regra e o motivo
+
+4
+00:00:31,500 --> 00:00:44,500
+Nada é definitivo
+
+5
+00:00:44,500 --> 00:00:56,500
+Liberação exige dupla aprovação humana registrada
+
+6
+00:00:56,500 --> 00:00:59,500
+Ambiente de demonstração — dados fictícios · pldbr.tech
+

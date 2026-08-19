@@ -36,9 +36,9 @@ export default function SiteHeader() {
           ))}
         </nav>
 
-        <a href="mailto:contato@beanstech.com.br" className="cta-primary !py-2 !px-4 text-sm">
-          Demonstração
-        </a>
+        <Link href="/dashboard" className="cta-primary !py-2 !px-4 text-sm">
+          Ver demonstração
+        </Link>
       </div>
     </header>
   );
