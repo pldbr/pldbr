@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B1F3A"/>
+      <stop offset="1" stop-color="#142B4D"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F3E7C3"/>
+      <stop offset="0.5" stop-color="#C9A227"/>
+      <stop offset="1" stop-color="#A8841B"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Tile -->
+  <rect x="32" y="32" width="960" height="960" rx="180" fill="url(#tile)"/>
+
+  <!-- Bean glyph: kidney shape + inner curve -->
+  <g transform="translate(512 420) rotate(-28)">
+    <path d="M -150 0
+             C -150 -95, -75 -150, 25 -138
+             C 128 -126, 175 -60, 160 18
+             C 146 96, 78 148, -12 136
+             C -100 124, -150 78, -150 0 Z"
+          fill="url(#gold)"/>
+    <path d="M -78 -18
+             C -28 -66, 48 -74, 96 -38
+             C 116 -22, 122 4, 112 24
+             C 60 6, -6 8, -58 34
+             C -80 44, -96 22, -78 -18 Z"
+          fill="#0B1F3A" opacity="0.92"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="512" y="740" text-anchor="middle" font-family="Arial, Helvetica, sans-serif"
+        font-size="118" font-weight="800" letter-spacing="14" fill="#FFFFFF">BEANSTECH</text>
+  <text x="512" y="812" text-anchor="middle" font-family="Arial, Helvetica, sans-serif"
+        font-size="44" font-weight="500" letter-spacing="22" fill="#C9A227">SOVEREIGN AI</text>
+</svg>

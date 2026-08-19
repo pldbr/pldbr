@@ -1,0 +1,55 @@
+# BeansTech — Motor PLD/AML + Crypto Intelligence
+
+> Infraestrutura de IA para prevenção à lavagem de dinheiro, rastreio de
+> criptomoedas e cessão de tecnologia ao Ministério Público Federal.
+
+## Sobre
+
+Motor PLD/AML deployado em produção no Google Cloud Platform (beanstech-pld-prod,
+southamerica-east1). 25 tipologias production-ready, 3 camadas de detecção
+(regras + ML + não-supervisionado), 10M transações/mês, recall >= 90%.
+
+Módulo de Crypto Intelligence integrado: chain analysis multichain (Bitcoin,
+Ethereum, Tron, Solana), detecção de mixers/tumblers (Tornado Cash, Blender,
+Sinbad, Samourai, Wasabi, ChipMixer, Bitcoin Fog, Helix), de-anonimização
+e clustering, monitoramento em tempo real, geração de relatórios com assinatura
+ICP-Brasil e guarda WORM 10 anos.
+
+## Cessão de Tecnologia
+
+Disponível para cessão ao MPF, PF, COAF, Bacen e demais órgãos de investigação.
+Deploy on-premise ou GCP Government Cloud. Soberania de dados (CMEK, VPC Service
+Controls). Conforme Decreto 9.507/2018 e IN 01/2019 SLTI.
+
+## Ecossistema
+
+12+ plataformas alimentadas pelo motor PLD: Beans Capital (RegTech enterprise),
+Beans Credit (score Open Finance), Moneyp.AI (passivo fiscal), Tributo.tech
+(compliance fiscal), Receber.tech (recebíveis), BeansBank (onboarding),
+LegalBet.tech (apostas), Defesa.tech (STM), Aceito.tech (LGPD).
+
+## Compliance
+
+Circular BACEN 3.978/2020 (100%) · Carta-Circular 4.001/2020 (25 tipologias) ·
+Lei 9.613/98 · Lei 13.259/2016 · LGPD · COAF/SISCOAF · FATF R.15 ·
+OFAC SDN · ONU · UE · CEAF · Sanctions screening · KYC/KYB · Audit trail WORM.
+
+## Stack
+
+Python 3.11 (FastAPI) + Go 1.22 (3 sidecars) + Next.js 15 (dashboard) +
+Cloud Run + BigQuery + Cloud Spanner (300 PU) + Dataflow + Vertex AI +
+FAISS + OPA + Temporal + Cloud KMS HSM + Document AI + GCS WORM +
+Neo4j + Elastic (67M+ docs) + Claude Opus 4.6.
+
+## Contato
+
+contato@beanstech.com.br | matheus@beanstech.com.br
+github.com/beanstechhub | +55 11 96650-7100
+
+## Playbook de Investigação de Criptoativos
+
+Estado da arte para uso institucional: 58 prompts/protocolos em 8 blocos
+(forense on-chain, clustering e atribuição, redes específicas, sanções/compliance,
+OSINT, análise financeira, providências jurídicas, automação e relatório),
+com padrão de saída evidencial (hash, método, grau de conclusão, reprodutibilidade).
+Documento: docs/prompts-investigacao-cripto.md
