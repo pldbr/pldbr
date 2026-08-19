@@ -21,3 +21,6 @@ next-env.d.ts
 
 # LibreOffice lock files
 .~lock.*#
+
+# tooling state (planos de sessão do ZCode)
+.zcode/

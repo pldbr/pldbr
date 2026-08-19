@@ -74,17 +74,37 @@ Stack adicional: PostgreSQL/AlloyDB, BigQuery Graph, Pub/Sub, Dataflow.
 
 | | |
 |---|---|
-| Stack | Next.js 15 · React 19 · TypeScript 5.7 · Tailwind CSS 4 · Framer Motion |
-| Build | 100% estático · first load 165 kB · zero erro TS |
+| Stack | Next.js 15 · React 19 · TypeScript 5.7 · Tailwind CSS 4 · Framer Motion · Recharts |
+| Build | first load 165 kB (home) · zero erro TS |
 | Seções | Visão Geral · Motor PLD · Crypto Intel · Ecossistema · Compliance · Governo |
 | SEO | OpenGraph, Twitter Card, JSON-LD (Organization + SoftwareApplication), `llms.txt` |
+
+### Dashboard de demonstração (`/dashboard`, noindex)
+
+Ambiente de demonstração com **dados fictícios determinísticos** (seed fixa —
+vídeos reprodutíveis) cobrindo **todas as ferramentas citadas no site**:
+Command Center (KPIs + health da API e dos 3 sidecars Go + fluxo 24h),
+Alertas (tipologias, 3 camadas de detecção), Tipologias YAML (hot-reload),
+Screening de sanções (OFAC/ONU/UE/CEAF), KYC/KYB, Crypto Intel (grafo
+on-chain, 8 mixers), Casos & RIF/SISCOAF (ICP-Brasil, WORM) e Blocking (OPA).
+
+**Analista IA multi-modelo**: seletor de provedor e modelo com descoberta em
+runtime (`GET /models`) — Qwen, **GLM**, DeepSeek e Kimi via Alibaba Cloud
+Model Studio (endpoint OpenAI-compatível), com **failover automático de
+cota** entre as chaves `QWEN_API_KEY` (cota maior) e `STUDIO_API_KEY`
+(tokens free) armazenadas no **Google Cloud Secret Manager** (projeto
+`beanstech`, lidas em runtime por `@google-cloud/secret-manager`/ADC —
+nenhum literal de credencial no repositório; offline, análise mock
+determinística assume e a demo nunca quebra).
 
 ```bash
 npm install
 npm run dev      # ambiente local
 npm run build    # build de produção
 npm start        # servir build
-node scripts/record-demo.cjs   # gravar demo (requer servidor em :3100)
+npm run probe:ai          # verifica chaves/modelos das duas APIs
+npm run record:dashboard  # grava o vídeo do dashboard (requer :3100)
+node scripts/record-demo.cjs   # gravar demo do site (requer servidor em :3100)
 ```
 
 Deploy sugerido: Cloud Run (`gcloud run deploy`, região `southamerica-east1`) ou Vercel.
