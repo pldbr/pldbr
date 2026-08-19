@@ -16,6 +16,7 @@
   --font-heading: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
 }
 
 @layer base {
@@ -47,6 +48,49 @@
 }
 
 @layer components {
+  /* ——— Camada editorial (dossiê) ———
+     Tipografia serifada de relatório, kickers em versalete e réguas finas:
+     a linguagem visual de documento oficial, não de landing page. */
+
+  .kicker {
+    font-family: var(--font-heading);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+  }
+
+  .dossier-title {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    line-height: 1.12;
+    text-wrap: balance;
+  }
+
+  .lede {
+    font-family: var(--font-serif);
+    font-size: 19px;
+    line-height: 1.65;
+    color: var(--color-text-secondary);
+    max-width: 68ch;
+  }
+
+  .rule {
+    border: 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .step-num {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    font-size: 44px;
+    line-height: 1;
+    color: var(--color-accent);
+    font-variant-numeric: tabular-nums;
+  }
+
   .section-padding {
     padding-top: 96px;
     padding-bottom: 96px;

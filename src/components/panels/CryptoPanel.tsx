@@ -1,22 +1,16 @@
 "use client";
 
 import CryptoIntelligence from "@/components/CryptoIntelligence";
+import PanelHeader from "@/components/PanelHeader";
 
 export default function CryptoPanel() {
   return (
     <div>
-      <div className="section-padding pb-0">
-        <div className="container">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Inteligência de Criptomoedas
-          </h2>
-          <p className="text-[var(--color-text-secondary)] max-w-3xl">
-            Módulo integrado ao motor PLD/AML para rastreio on-chain, detecção
-            de mixers/tumblers, de-anonimização e geração de relatórios forenses
-            com assinatura ICP-Brasil. Pronto para cessão ao MPF.
-          </p>
-        </div>
-      </div>
+      <PanelHeader
+        kicker="Crypto Intelligence"
+        title="O rastro que a blockchain não apaga"
+        lede="A crença comum de que criptomoeda é anônima é, para fins investigativos, um equívoco útil: toda transação é registrada publicamente, para sempre. O módulo percorre esse registro — segue os saltos entre carteiras, identifica passagens por mixers (serviços que embaralham a origem dos fundos), agrupa carteiras de um mesmo controlador em clusters e mede o contato com endereços sancionados. O resultado é um relatório forense assinado com certificado ICP-Brasil, apto a instruir inquérito."
+      />
       <CryptoIntelligence />
     </div>
   );

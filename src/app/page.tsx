@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Hero from "@/components/Hero";
+import InvestigationWalkthrough from "@/components/InvestigationWalkthrough";
 import TabBar, { type TabId } from "@/components/TabBar";
 import TabPanel from "@/components/TabPanel";
 import OverviewPanel from "@/components/panels/OverviewPanel";
@@ -12,6 +13,7 @@ import CompliancePanel from "@/components/panels/CompliancePanel";
 import GovernoPanel from "@/components/panels/GovernoPanel";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
+import Glossary from "@/components/Glossary";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<TabId>("overview");
@@ -19,6 +21,7 @@ export default function Home() {
   return (
     <main>
       <Hero />
+      <InvestigationWalkthrough />
       <TabBar activeTab={activeTab} onTabChange={setActiveTab} />
 
       <TabPanel id="overview" activeTab={activeTab}>
@@ -46,6 +49,7 @@ export default function Home() {
       </TabPanel>
 
       <CTA />
+      <Glossary />
       <Footer />
     </main>
   );

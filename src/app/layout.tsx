@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -11,6 +11,12 @@ const inter = Inter({
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
+  display: "swap",
+});
+
+const sourceSerif = Source_Serif_4({
+  subsets: ["latin"],
+  variable: "--font-serif",
   display: "swap",
 });
 
@@ -61,7 +67,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR" className={`${inter.variable} ${jetbrainsMono.variable}`}>
+    <html lang="pt-BR" className={`${inter.variable} ${jetbrainsMono.variable} ${sourceSerif.variable}`}>
       <head>
         <link rel="canonical" href="https://pldbr.tech" />
         <script
