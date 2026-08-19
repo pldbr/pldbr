@@ -17,6 +17,7 @@ import {
 } from "recharts";
 import { Activity, ShieldCheck } from "lucide-react";
 import { kpis, flow24h, health, compliance, ecosystem } from "@/lib/demoData";
+import ModuleIntro from "./ModuleIntro";
 
 // CountUp local — mesmo padrão do AnimatedNumber do site (IntersectionObserver
 // disparando intervalo de 60 steps); aqui dispara na montagem do módulo.
@@ -88,21 +89,27 @@ export default function CommandCenter() {
 
   return (
     <div className="max-w-6xl mx-auto space-y-8">
+      <ModuleIntro
+        kicker="Centro de comando"
+        title="O sistema em um relance"
+        lede="Cada número abaixo tem significado direto para a investigação: quantas movimentações o motor examina, quantas suspeitas levantou hoje e com que velocidade responde. “Recall 0,94” significa: de cada 100 casos reais de lavagem, o motor detecta 94."
+      />
+
       {/* KPIs */}
       <div data-tour="kpi-row" className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-        <Kpi label="Transações/mês" sub="escala de produção">
+        <Kpi label="Movimentações/mês" sub="examinadas automaticamente">
           {(kpis.transacoesMes / 1e6).toFixed(0)} mi
         </Kpi>
-        <Kpi label="Alertas hoje" sub="3 camadas de detecção">
+        <Kpi label="Suspeitas hoje" sub="levantadas pelo motor">
           <CountUp to={alertasHoje} />
         </Kpi>
-        <Kpi label="Casos abertos" sub="investigação ativa">
+        <Kpi label="Casos abertos" sub="investigação em andamento">
           <CountUp to={kpis.casosAbertos} />
         </Kpi>
-        <Kpi label="Recall" sub="meta ≥ 0,90">
+        <Kpi label="Detecção (recall)" sub="de cada 100 casos reais, 94 apanhados">
           <CountUp to={kpis.recall} decimals={2} />
         </Kpi>
-        <Kpi label="Latência p95" sub="meta < 5 s">
+        <Kpi label="Tempo de resposta" sub="quase tudo em menos de 4 segundos">
           <CountUp to={kpis.p95Segundos} decimals={1} />s
         </Kpi>
       </div>

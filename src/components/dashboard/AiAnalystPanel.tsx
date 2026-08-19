@@ -13,6 +13,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import type { Alert } from "@/lib/demoData";
 import { alerts } from "@/lib/demoData";
 import { Sparkles, RefreshCw } from "lucide-react";
+import ModuleIntro from "./ModuleIntro";
 
 interface ServedBy {
   provider: string | null;
@@ -167,15 +168,11 @@ export default function AiAnalystPanel({
 
   return (
     <div className="max-w-5xl mx-auto space-y-5">
-      <div>
-        <h2 className="text-xl font-bold flex items-center gap-2">
-          <Sparkles size={18} className="text-[var(--color-accent)]" />
-          Analista IA — multi-provedor · multi-modelo
-        </h2>
-        <p className="text-sm text-[var(--color-text-secondary)] mt-1">
-          Alibaba Cloud Model Studio · failover automático de cota · Qwen / GLM / DeepSeek / Kimi
-        </p>
-      </div>
+      <ModuleIntro
+        kicker="Analista IA"
+        title="A IA lê o alerta e propõe a minuta — o analista decide"
+        lede="Escolha o provedor e o modelo de inteligência artificial; a IA recebe o alerta e redige uma minuta de análise com fundamentos e recomendações. É um assistente de redação e hipóteses: a decisão final — comunicar, aprofundar ou arquivar — permanece com o analista humano. Se a conexão cair, uma análise padrão assume: a apresentação nunca para."
+      />
 
       {/* alerta em análise */}
       <div className="glass-card !p-5">

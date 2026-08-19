@@ -7,6 +7,7 @@
 
 import { cryptoAddresses, MIXERS_CITADOS } from "@/lib/demoData";
 import { ShieldAlert } from "lucide-react";
+import ModuleIntro from "./ModuleIntro";
 
 const riskBadge: Record<string, string> = {
   critical: "badge badge-danger",
@@ -84,12 +85,11 @@ function FlowGraph() {
 export default function CryptoPanel() {
   return (
     <div className="max-w-6xl mx-auto space-y-5">
-      <div>
-        <h2 className="text-xl font-bold">Crypto Intelligence — multichain</h2>
-        <p className="text-sm text-[var(--color-text-secondary)] mt-1">
-          Bitcoin · Ethereum · Tron · Solana — clustering e desanonimização · monitoramento em tempo real (demo)
-        </p>
-      </div>
+      <ModuleIntro
+        kicker="Rastreamento de criptomoedas"
+        title="O caminho do dinheiro na blockchain"
+        lede="O gráfico conta uma trilha típica de ocultação: o valor sai da carteira de origem, passa por um mixer (serviço que embaralha fundos de vários usuários para esconder a origem) e reaparece — numa exchange, onde há identificação de cliente, ou num endereço sancionado. Os clusters agrupam carteiras de um mesmo controlador: um investigado, muitas carteiras."
+      />
 
       <div className="grid lg:grid-cols-5 gap-4">
         <div className="glass-card !p-6 lg:col-span-2">

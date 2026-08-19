@@ -6,6 +6,7 @@
 
 import { AlertTriangle, BadgeCheck, FileWarning } from "lucide-react";
 import { kycProfile } from "@/lib/demoData";
+import ModuleIntro from "./ModuleIntro";
 
 function RiskGauge({ score }: { score: number }) {
   const color =
@@ -31,12 +32,11 @@ function RiskGauge({ score }: { score: number }) {
 export default function KycPanel() {
   return (
     <div className="max-w-5xl mx-auto space-y-5">
-      <div>
-        <h2 className="text-xl font-bold">KYC / KYB — <span className="text-[var(--color-text-secondary)] font-normal">{kycProfile.cliente}</span></h2>
-        <p className="text-sm text-[var(--color-text-secondary)] mt-1">
-          Document AI + DLP · onboarding contínuo · dados fictícios
-        </p>
-      </div>
+      <ModuleIntro
+        kicker="Conheça seu cliente"
+        title={`Quem está por trás da conta: ${kycProfile.cliente}`}
+        lede="O KYC pergunta o básico que a fraude tenta esconder: quem é o cliente, de onde vem o dinheiro, quem são os sócios — e se ele é PEP (pessoa politicamente exposta: ocupante de cargo público, que exige atenção redobrada por lei). Pontuação alta significa risco maior de a conta ser usada para ocultação. Documentos são lidos e validados automaticamente."
+      />
 
       <div className="grid md:grid-cols-3 gap-4">
         <div className="glass-card !p-6 flex flex-col items-center gap-4">

@@ -7,6 +7,7 @@
 import type { Alert } from "@/lib/demoData";
 import { alerts } from "@/lib/demoData";
 import { Sparkles } from "lucide-react";
+import ModuleIntro from "./ModuleIntro";
 
 const sevBadge: Record<Alert["severity"], string> = {
   critical: "badge badge-danger",
@@ -31,15 +32,11 @@ interface Props {
 export default function AlertsQueue({ selectedId, onSelect, onAnalyze }: Props) {
   return (
     <div className="max-w-6xl mx-auto">
-      <div className="flex items-baseline justify-between mb-4">
-        <div>
-          <h2 className="text-xl font-bold">Fila de alertas</h2>
-          <p className="text-sm text-[var(--color-text-secondary)] mt-1">
-            {alerts.length} alertas · ordenados por score · 3 camadas de detecção ativas
-          </p>
-        </div>
-        <span className="badge badge-success">TEMPO REAL</span>
-      </div>
+      <ModuleIntro
+        kicker="Fila de alertas"
+        title="O que o motor considerou suspeito — e por quê"
+        lede="Cada linha é um alerta: o padrão que disparou (tipologia), o valor envolvido e uma pontuação de risco de 0 a 100 — quanto maior, mais urgente. A coluna “camada” indica qual dos três mecanismos levantou a suspeita: regra escrita por especialista, modelo treinado em casos confirmados, ou desvio do padrão próprio do cliente."
+      />
 
       <div className="glass-card !p-0 overflow-hidden" data-tour="alerts-table">
         <table className="w-full text-sm">
@@ -124,8 +121,10 @@ export default function AlertsQueue({ selectedId, onSelect, onAnalyze }: Props) 
           </tbody>
         </table>
       </div>
-      <p className="text-xs text-[var(--color-text-secondary)] opacity-70 mt-3">
-        Clique em uma linha para selecionar · “IA” envia o alerta ao Analista IA (multi-modelo)
+      <p className="text-xs text-[var(--color-text-secondary)] opacity-70 mt-3 leading-relaxed">
+        Clique em uma linha para selecioná-la · “IA” envia o alerta ao Analista ·
+        <strong className="font-semibold"> Severidade:</strong> crítico exige ação hoje, alto em 24h ·
+        <strong className="font-semibold"> Score:</strong> probabilidade de lavagem estimada pelo motor — é indício, não prova.
       </p>
     </div>
   );

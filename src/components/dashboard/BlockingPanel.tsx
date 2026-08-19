@@ -5,20 +5,21 @@
 
 import { blockings } from "@/lib/demoData";
 import { Lock } from "lucide-react";
+import ModuleIntro from "./ModuleIntro";
 
 const totalHoje = blockings.reduce((s, b) => s + b.valor, 0);
 
 export default function BlockingPanel() {
   return (
     <div className="max-w-5xl mx-auto space-y-5">
+      <ModuleIntro
+        kicker="Bloqueios preventivos"
+        title="Quando a evidência é clara, o valor fica retido na hora"
+        lede="Cada bloqueio abaixo aconteceu automaticamente, em milissegundos, citando a regra que o determinou e o motivo. Nada é definitivo: a retenção segura o valor enquanto o analista decide — e a liberação sempre exige dupla aprovação humana, registrada na trilha de auditoria."
+      />
+
       <div className="flex flex-wrap items-end justify-between gap-4">
-        <div>
-          <h2 className="text-xl font-bold">Blocking — policy engine OPA</h2>
-          <p className="text-sm text-[var(--color-text-secondary)] mt-1">
-            Bloqueios preventivos em tempo real · sidecar Go · p95 9 ms (demo)
-          </p>
-        </div>
-        <div className="text-right" data-tour="blocking-total">
+        <div className="text-right ml-auto" data-tour="blocking-total">
           <p className="text-2xl font-bold text-[var(--color-danger)] tabular-nums">
             {totalHoje.toLocaleString("pt-BR", { style: "currency", currency: "BRL", maximumFractionDigits: 0 })}
           </p>

@@ -6,6 +6,7 @@
 
 import { cases } from "@/lib/demoData";
 import { FileSignature, Archive } from "lucide-react";
+import ModuleIntro from "./ModuleIntro";
 
 const statusBadge: Record<string, { cls: string; label: string }> = {
   investigacao: { cls: "badge badge-accent", label: "INVESTIGAÇÃO" },
@@ -17,12 +18,11 @@ const statusBadge: Record<string, { cls: string; label: string }> = {
 export default function CasesRifPanel() {
   return (
     <div className="max-w-5xl mx-auto space-y-5">
-      <div>
-        <h2 className="text-xl font-bold">Casos & RIF/SISCOAF</h2>
-        <p className="text-sm text-[var(--color-text-secondary)] mt-1">
-          Comunicação automática · assinatura ICP-Brasil (Cloud KMS · HSM) · guarda WORM 10 anos
-        </p>
-      </div>
+      <ModuleIntro
+        kicker="Casos e comunicações"
+        title="Do alerta confirmado ao relatório ao COAF"
+        lede="Quando a suspeita se sustenta, o caso gera o RIF — a comunicação formal ao COAF (Conselho de Controle de Atividades Financeiras), com prazo de 24 horas úteis. Cada comunicação é assinada com certificado digital de validade de cartório (ICP-Brasil) e guardada em armazenamento imutável por 10 anos: nem o próprio sistema pode alterá-la depois."
+      />
 
       <div className="relative space-y-4 before:absolute before:left-[7px] before:top-2 before:bottom-2 before:w-px before:bg-[var(--color-border)]">
         {cases.map((c) => {

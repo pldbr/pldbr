@@ -6,6 +6,7 @@
 
 import { useMemo, useState } from "react";
 import { screeningHits } from "@/lib/demoData";
+import ModuleIntro from "./ModuleIntro";
 
 export default function ScreeningPanel() {
   const [q, setQ] = useState("");
@@ -18,12 +19,11 @@ export default function ScreeningPanel() {
 
   return (
     <div className="max-w-5xl mx-auto space-y-5">
-      <div>
-        <h2 className="text-xl font-bold">Screening de sanções</h2>
-        <p className="text-sm text-[var(--color-text-secondary)] mt-1">
-          OFAC SDN · ONU · UE · CEAF — Screener FAISS (sidecar Go) · p95 41 ms (demo)
-        </p>
-      </div>
+      <ModuleIntro
+        kicker="Consulta a listas restritivas"
+        title="Quem não pode ser atendido — conferido a cada operação"
+        lede="Antes de qualquer relação, nomes são confrontados com as listas de sanções: OFAC SDN (EUA), ONU, União Europeia e o CEAF nacional. O percentual de correspondência mede a semelhança com o nome listado — acima de 85%, o valor é bloqueado preventivamente e o caso comunica ao COAF. É a mesma checagem que bancos fazem; aqui, em milissegundos."
+      />
 
       <div className="relative">
         <input
