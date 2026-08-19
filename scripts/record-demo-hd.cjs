@@ -22,7 +22,7 @@ try {
 
 const BASE = process.env.BASE_URL || 'http://localhost:3100';
 const OUT_DIR = path.resolve(__dirname, '../public/demo');
-const DPR = 2;
+const DPR = 1;
 const VP = { width: 1920, height: 1080 };
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -88,7 +88,6 @@ function toMp4(webmPath, mp4Path) {
       [
         '-y',
         '-i', TMP_IN,
-        '-vf', 'scale=1920:1080:flags=lanczos',
         '-c:v', 'libx264',
         '-preset', 'medium',
         '-crf', '18',
