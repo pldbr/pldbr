@@ -291,7 +291,7 @@ async function runAction(page, pos, act) {
   if (!ep) { console.error('episódio inválido (1–20)'); process.exit(1); }
 
   console.log(`🎬 EP ${String(ep.n).padStart(2, '0')}/20 — ${ep.titulo}`);
-  const browser = await chromium.launch({ headless: false });
+  const browser = await chromium.launch({ headless: true });
   const context = await browser.newContext({
     viewport: VP,
     deviceScaleFactor: DPR,

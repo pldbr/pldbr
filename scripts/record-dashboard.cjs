@@ -132,7 +132,7 @@ function toMp4(webmPath, mp4Path) {
 
 (async () => {
   console.log('🎬 Dashboard demo HD — DPR 2 supersampled → 1080p lanczos');
-  const browser = await chromium.launch({ headless: false });
+  const browser = await chromium.launch({ headless: true });
   const context = await browser.newContext({
     viewport: VP,
     deviceScaleFactor: DPR,
