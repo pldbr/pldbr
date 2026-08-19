@@ -74,7 +74,9 @@ const FALLBACK_MODELS: Record<ProviderId, string[]> = {
 };
 
 const GCP_PROJECT = process.env.GCP_PROJECT || "beanstech";
-const CACHE_TTL_MS = 5 * 60 * 1000;
+// Chaves raramente mudam: cache de 1h evita a primeira chamada lenta
+// (cliente Secret Manager + ADC levam vários segundos no cold start).
+const CACHE_TTL_MS = 60 * 60 * 1000;
 const keyCache = new Map<string, { value: string; at: number }>();
 
 // Allowlist de defesa em profundidade para os nomes que compõem o resource
@@ -119,11 +121,20 @@ export async function getApiKey(provider: ProviderId): Promise<string | null> {
   return value;
 }
 
+// Aquecimento no boot do servidor: dispara a leitura das duas chaves em
+// paralelo para que o primeiro visitante do painel já encontre o cache
+// quente (o cold start do Secret Manager + ADC levaria ~12s na 1ª chamada).
+void Promise.all([getApiKey("qwen"), getApiKey("studio")]).catch(() => {});
+
 /** Lista modelos do provedor. Cai na lista estática em caso de falha. */
 export async function listModels(provider: ProviderId): Promise<{
   source: "api" | "fallback";
   models: string[];
 }> {
+  const cachedList = modelsListCache.get(provider);
+  if (cachedList && Date.now() - cachedList.at < MODELS_TTL_MS) {
+    return cachedList.data;
+  }
   const key = await getApiKey(provider);
   if (!key) return { source: "fallback", models: FALLBACK_MODELS[provider] };
   const base = await resolveBaseUrl(provider);
@@ -137,11 +148,21 @@ export async function listModels(provider: ProviderId): Promise<{
     const json = (await res.json()) as { data?: { id: string }[] };
     const ids = (json.data || []).map((m) => m.id).sort();
     if (!ids.length) return { source: "fallback", models: FALLBACK_MODELS[provider] };
-    return { source: "api", models: ids };
+    const data = { source: "api" as const, models: ids };
+    modelsListCache.set(provider, { at: Date.now(), data });
+    return data;
   } catch {
     return { source: "fallback", models: FALLBACK_MODELS[provider] };
   }
 }
+
+// Cache da lista de modelos (ids públicos, mudam raramente): trocas de
+// provedor no painel ficam instantâneas em vez de esperar a API de novo.
+const MODELS_TTL_MS = 10 * 60 * 1000;
+const modelsListCache = new Map<
+  ProviderId,
+  { at: number; data: { source: "api" | "fallback"; models: string[] } }
+>();
 
 // Resolução de endpoint: testa cada base candidata com GET /models e cacheia
 // a que autenticar (chaves regionais devolvem 401 fora da região de origem).

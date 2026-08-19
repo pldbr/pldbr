@@ -28,11 +28,36 @@ interface AnalyzeResult {
 }
 
 const PROVIDER_OPTIONS = [
-  { id: "qwen", label: "QWEN — cota maior" },
-  { id: "studio", label: "STUDIO — cota free" },
+  { id: "qwen", label: "QWEN — melhores modelos · cota maior" },
+  { id: "studio", label: "STUDIO — tokens free · limitada" },
 ] as const;
 
 type ProviderId = (typeof PROVIDER_OPTIONS)[number]["id"];
+
+// Lista estática imediata: o painel é utilizável no instante em que abre,
+// sem esperar a descoberta ao vivo (que pode levar segundos na 1ª chamada).
+const STATIC_MODELS: Record<ProviderId, string[]> = {
+  qwen: [
+    "qwen3.7-flash",
+    "qwen3.7-plus",
+    "qwen3.8-max",
+    "glm-5.2-fast-preview",
+    "glm-5.2",
+    "ZHIPU/GLM-5.3",
+    "deepseek-v4-pro-0813",
+    "kimi-k2.7-code",
+  ],
+  studio: ["qwen3.7-flash", "qwen-plus", "qwen-turbo", "qwen-max", "deepseek-v3.1", "deepseek-r1"],
+};
+
+function preferredModel(list: string[]): string {
+  return (
+    list.find((m) => m === "qwen3.7-flash") ||
+    list.find((m) => m.startsWith("qwen")) ||
+    list[0] ||
+    ""
+  );
+}
 
 // markdown-lite: **negrito** → <strong>, linha a linha
 function renderInline(text: string, keyBase: string) {
@@ -54,40 +79,56 @@ export default function AiAnalystPanel({
   onChangeAlert: (a: Alert) => void;
 }) {
   const [provider, setProvider] = useState<ProviderId>("qwen");
-  const [models, setModels] = useState<string[]>([]);
-  const [model, setModel] = useState("");
+  const [models, setModels] = useState<string[]>(STATIC_MODELS.qwen);
+  const [model, setModel] = useState(preferredModel(STATIC_MODELS.qwen));
   const [modelsSource, setModelsSource] = useState<"api" | "fallback" | "loading">("loading");
-  const [loading, setLoading] = useState(false);
-  const [result, setResult] = useState<AnalyzeResult | null>(null);
-  const [typed, setTyped] = useState("");
-  const typerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  // descobre modelos do provedor selecionado
+  // Descobre a lista ao vivo com retry — o painel já está funcional com a
+  // lista estática enquanto isso; ao chegar, a lista é trocada mantendo a
+  // seleção atual quando possível.
   useEffect(() => {
     let alive = true;
     setModelsSource("loading");
-    setModels([]);
-    setModel("");
-    fetch(`/api/ai/models?provider=${provider}`)
-      .then((r) => r.json())
-      .then((j: { source: "api" | "fallback"; models: string[] }) => {
-        if (!alive) return;
+    let attempt = 0;
+    const fetchModels = async (): Promise<{ source: "api" | "fallback"; models: string[] } | null> => {
+      try {
+        const r = await fetch(`/api/ai/models?provider=${provider}`);
+        if (!r.ok) return null;
+        return await r.json();
+      } catch {
+        return null;
+      }
+    };
+    const run = async () => {
+      const j = await fetchModels();
+      if (!alive) return;
+      if (j && j.source === "api" && j.models.length) {
         setModels(j.models);
-        setModelsSource(j.source);
-        const prefer =
-          provider === "qwen"
-            ? j.models.find((m) => m === "qwen3.7-flash") || j.models.find((m) => m.startsWith("qwen"))
-            : j.models.find((m) => m === "qwen-plus") || j.models.find((m) => m.startsWith("qwen"));
-        setModel(prefer || j.models[0] || "");
-      })
-      .catch(() => {
-        if (!alive) return;
+        setModelsSource("api");
+        setModel((cur) => (j.models.includes(cur) ? cur : preferredModel(j.models)));
+        return;
+      }
+      attempt += 1;
+      if (attempt < 3) {
+        setTimeout(run, 1500);
+      } else if (j && j.models?.length) {
+        setModels(j.models);
         setModelsSource("fallback");
-      });
+      } else {
+        // mantém a lista estática já exibida
+        setModelsSource("fallback");
+      }
+    };
+    run();
     return () => {
       alive = false;
     };
   }, [provider]);
+
+  const [loading, setLoading] = useState(false);
+  const [result, setResult] = useState<AnalyzeResult | null>(null);
+  const [typed, setTyped] = useState("");
+  const typerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const stopTyper = useCallback(() => {
     if (typerRef.current) {
@@ -192,7 +233,7 @@ export default function AiAnalystPanel({
               <span className="badge badge-success ml-1">{models.length} ao vivo</span>
             )}
             {modelsSource === "fallback" && <span className="badge ml-1">lista estática</span>}
-            {modelsSource === "loading" && <span className="badge ml-1">carregando…</span>}
+            {modelsSource === "loading" && <span className="badge ml-1">lista estática · buscando ao vivo…</span>}
           </label>
           <select
             data-tour="ai-model"
