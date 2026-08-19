@@ -1,0 +1,12 @@
+# Não sobe para o Cloud Build: dependências e artefatos locais
+node_modules/
+.next/
+.git/
+.mimosa/
+.zcode/
+docs/
+scripts/
+public/demo/
+*.mp4
+*.webm
+README.md
