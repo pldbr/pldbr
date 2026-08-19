@@ -53,3 +53,25 @@ Estado da arte para uso institucional: 58 prompts/protocolos em 8 blocos
 OSINT, análise financeira, providências jurídicas, automação e relatório),
 com padrão de saída evidencial (hash, método, grau de conclusão, reprodutibilidade).
 Documento: docs/prompts-investigacao-cripto.md
+
+## Site pldbr.tech
+
+Site institucional didático, voltado a Ministério Público Federal e estaduais:
+trilha narrativa "Como uma investigação acontece" (6 passos, do dado bruto ao
+dossiê que instrui inquérito), glossário PLD/AML em linguagem de promotor
+(16 termos) e páginas institucionais: /sobre, /cessao (base legal da cessão
+ao setor público), /privacidade (LGPD) e /termos.
+
+Dashboard de demonstração em /dashboard (noindex, dados 100% fictícios):
+9 módulos — Command Center, Alertas, Tipologias (YAML com tradução do
+analista), Screening de sanções, KYC/KYB, Crypto Intelligence, Casos &
+RIF/SISCOAF, Blocking e Analista IA (multi-modelo: Qwen, GLM, DeepSeek,
+Kimi — via Alibaba Cloud Model Studio com chaves do Google Cloud Secret
+Manager lidas em runtime).
+
+## Série didática de vídeos
+
+"Uma investigação em 20 minutos": 20 episódios de ~1 minuto usando o
+dashboard como se fosse uma investigação real (caso fictício contínuo),
+com roteiros de narração. Guia: docs/serie-videos-investigacao.md ·
+Episódios: public/demo/serie/

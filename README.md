@@ -60,6 +60,10 @@ Stack adicional: PostgreSQL/AlloyDB, BigQuery Graph, Pub/Sub, Dataflow.
 
 ## Documentação neste repositório
 
+- **[Série didática — "Uma investigação em 20 minutos"](docs/serie-videos-investigacao.md)**
+  20 episódios de ~1 min com o dashboard como se fosse uma investigação real
+  (caso fictício contínuo, roteiros de narração prontos; legendas queimadas).
+  Episódios em `public/demo/serie/` — grave com `npm run record:ep -- --ep N`.
 - **[Playbook de Investigação de Criptoativos — Estado da Arte](docs/prompts-investigacao-cripto.md)**
   58 prompts/protocolos em 8 blocos (forense on-chain, clustering e atribuição, redes
   específicas, sanções/compliance, OSINT, análise financeira, providências jurídicas,
