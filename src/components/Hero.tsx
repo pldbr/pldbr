@@ -108,23 +108,6 @@ export default function Hero() {
             </div>
           ))}
         </motion.div>
-
-        <motion.div
-          className="flex flex-wrap justify-center gap-3"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-        >
-          {[
-            "Google for Startups 2025",
-            "GCP Digital Cloud Leader 2026",
-            "INPI 2025",
-          ].map((cred) => (
-            <span key={cred} className="badge">
-              {cred}
-            </span>
-          ))}
-        </motion.div>
       </div>
     </section>
   );

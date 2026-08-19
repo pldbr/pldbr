@@ -71,7 +71,7 @@ const terms = [
 
 export default function Glossary() {
   return (
-    <section className="section-padding" aria-labelledby="glossary-title">
+    <section id="glossario" className="section-padding scroll-mt-16" aria-labelledby="glossary-title">
       <div className="container">
         <div className="max-w-3xl mb-12">
           <p className="kicker mb-3">Glossário</p>

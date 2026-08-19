@@ -14,12 +14,14 @@ import GovernoPanel from "@/components/panels/GovernoPanel";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import Glossary from "@/components/Glossary";
+import SiteHeader from "@/components/SiteHeader";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<TabId>("overview");
 
   return (
     <main>
+      <SiteHeader />
       <Hero />
       <InvestigationWalkthrough />
       <TabBar activeTab={activeTab} onTabChange={setActiveTab} />

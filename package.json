@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "probe:ai": "node scripts/probe-ai.cjs",
-    "record:dashboard": "node scripts/record-dashboard.cjs"
+    "record:dashboard": "node scripts/record-dashboard.cjs",
+    "record:ep": "node scripts/record-episodio.cjs"
   },
   "dependencies": {
     "@google-cloud/secret-manager": "^7.0.0",

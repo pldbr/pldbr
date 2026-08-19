@@ -49,7 +49,7 @@ const steps = [
 
 export default function InvestigationWalkthrough() {
   return (
-    <section className="section-padding" aria-labelledby="walkthrough-title">
+    <section id="walkthrough" className="section-padding scroll-mt-16" aria-labelledby="walkthrough-title">
       <div className="container">
         <div className="max-w-3xl mb-14">
           <p className="kicker mb-3">Como uma investigação acontece</p>
